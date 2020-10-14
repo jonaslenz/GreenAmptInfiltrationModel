@@ -20,8 +20,9 @@
 # Applied hydrology. 1988.
 #--------------------------------------------------------
 
+#import object
 from scipy.optimize import newton
-from pprint import pprint
+#from pprint import pprint
 from json import dump
 from math import log
 import numpy as np
@@ -105,7 +106,7 @@ class GreenAmpt(object):
                 elif abs(f_t_next_temp) <= i_t:
                     # ponding occurs during interval
                     Fp_t = self.Fp(i_t)
-                    print i_t
+ #                   print i_t
                     dt_p = (Fp_t - F_t) / i_t
                     F_t_next = self.F(Fp_t, self.dt - dt_p)
                     f_t_next = self.f(F_t_next)        
